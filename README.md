@@ -4,6 +4,24 @@
 
 This script is designed to help users create a bootable disk from an image file on macOS. It lists available external drives and image files, allowing the user to select the desired options.
 
+
+## Exclusivity to macOS
+
+This script is specifically designed for macOS, utilizing the `diskutil` command to manage drives. It will not work on Linux distributions without modification.
+
+## Adapting for Linux
+
+To use this script on a Linux distribution, you need to replace macOS-specific commands with Linux equivalents:
+
+- **List Drives**: Use `lsblk` instead of `diskutil list`.
+- **Unmount Drives**: Use `umount` instead of `diskutil unmountDisk`.
+- **Eject Drives**: Use `eject` or `udisksctl power-off` instead of `diskutil eject`.
+
+### Expected Differences
+
+- **Command Syntax**: Linux commands may have different options and syntax.
+- **Drive Identifiers**: Linux uses `/dev/sdX` format instead of `/dev/diskX`.
+
 ## Usage
 
 1. **Make the Script Executable**: Run the following command to make the script executable:
